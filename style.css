@@ -1,0 +1,424 @@
+/* PC */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    color: #333;
+    font-family: "游ゴシック",YuGothic,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.Header{
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.HeaderContainer{
+    display: flex;
+    justify-content: space-between;
+    margin:0 36px;
+    align-content: center;
+}
+
+.HeaderLogoLink{
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+
+.HeaderLogoLink_sp{
+    display: none;
+}
+
+.HeaderLogoLink > img{
+    width: 185px;
+}
+
+.drawer_hidden{
+    display: none;
+}
+
+.nav_menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav_item:not(:last-child){
+    text-align: center;
+    padding-right: 45px;
+    font-weight: 700;
+}
+
+.nav_item > a > span:first-child{
+    font-size: 14px;
+    display: block;
+}
+
+.nav_item > a > span:last-child{
+    font-size: 10px;
+    display: block;
+}
+
+.nav_item_button{
+    background-color: #f79214;
+    height: 40px;
+    padding: 15px 20px;
+    border-radius: 38px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.First_view{
+padding: 90px 0 28px;
+/* background-color: beige; */
+background-image: url(https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/top-hero.jpg);
+background-size: cover;
+background-position: center;
+}
+
+.First_view_image_sp{
+    display: none;
+}
+
+.First_view_container{
+    max-width: 1140px;
+    padding-left:50px;
+    padding-right:50px;
+    margin: 0 auto;
+}
+
+.First_view_content{
+    margin-bottom: 60px;
+    width: fit-content;
+}
+
+.First_view_title{
+    text-align: center;
+    font-size: 38px;
+    font-family: "Lato",sans-serif;
+    margin-bottom: 15px;
+}
+
+.First_view_image{
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.First_view_image>img:nth-child(2){
+    width: 40%;
+}
+
+.First_view_button{
+    display: flex;
+    background-color: #f79214;
+    width: 100%;
+    text-align: center;
+    height: 64px;   
+    align-items: center;
+    justify-content: center;
+    border-radius: 38px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.First_view_caption{
+    font-size: 12px;
+    color: #a2a2a4;
+}
+
+.About{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f79214;
+}
+
+.About_container{
+    max-width: 1140px;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.About_video{
+    width: 50%;
+}
+
+.About_contents{
+    margin-left: 30px;
+    width: 100%;
+}
+
+.About_contents > h2{
+    font-size: 38px;
+    font-weight: 900;
+    margin-bottom: 8px;
+    letter-spacing: .1em;
+}
+
+.About_contents > p{
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 24px;
+}
+
+.About__reskilling-logo{
+    width: 158px;
+}
+
+
+/* タブレット */
+@media screen and (max-width: 1080px) {
+    main{
+        padding-top: 60px;
+    }
+
+    .Header{
+        background-color: #fff;
+        z-index: 100;
+        position: fixed;
+        padding: 0;
+    }
+
+    .drawer_open {
+        display: flex;
+        height: 60px;
+        width: 60px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 100;
+        cursor: pointer;
+    }
+    
+    .drawer_open span,
+    .drawer_open span:before,
+    .drawer_open span:after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 25px;
+        border-radius: 3px;
+        background: #333;
+        transition: 0.5s;
+        position: absolute;
+    }
+    
+    .drawer_open span:before {
+        bottom: 8px;
+    }
+    
+    .drawer_open span:after {
+        top: 8px;
+    }
+    
+    #drawer_input:checked ~ .drawer_open span {
+        background: rgba(255, 255, 255, 0);
+    }
+    
+    #drawer_input:checked ~ .drawer_open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+    
+    #drawer_input:checked ~ .drawer_open span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    
+    .nav_menu{
+        position: fixed;
+        top: 60px;
+        left: 100%; /* メニューを画面の外に飛ばす */
+        z-index: 99;
+        background: rgba(0,0,0,.8);
+        transition: .5s;
+        display: block;
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 70px;
+        height: 100%;
+    }
+    
+    #drawer_input:checked ~ .nav_menu {
+        left: 0;/* メニューを画面に入れる */
+    }
+    
+    .nav_item_button{
+        display: flex;
+        width: 250px;
+        height: 60px;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    .nav_item:not(:last-child){
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+        padding-right: 0;
+    }
+    
+    .nav_item > a > span:first-child{
+        color: #fff;
+        font-size: 16px;
+        letter-spacing: 5px;
+    }
+
+    .nav_item > a > span:last-child{
+        color: #f79214;
+        font-size: 12px;
+        letter-spacing: 2px;
+        margin-top: 10px;
+    }
+
+    .nav_item:not(:last-child){
+        padding-right: 0;
+    }
+
+    .About_container{
+        flex-direction: column;
+    }
+
+    .About_video{
+        width: 75%;
+        margin-bottom: 16px;
+    }
+
+    .About_contents{
+        width: 75%;
+        margin-left: 0;
+    }
+
+    .About_contents > p{
+        margin-bottom: 32px;
+    }
+
+    .About__reskilling-logo{
+        display: block;
+        margin: 0 auto;
+    }
+
+}
+
+
+/* SP */
+@media screen and (max-width: 767px) {
+    main{
+        padding-top: 55px;
+    }
+
+    .Header{
+        padding: 15px 0;
+    }
+
+    .HeaderContainer{
+        margin: 0 20px;
+    }
+    .HeaderLogoLink{
+        display: none;
+    }
+
+    .HeaderLogoLink_sp{
+        display: block;
+        align-self: center;
+    }
+
+    .HeaderLogoLink_sp > img{
+        height: 16px;
+    }
+
+    .drawer_open{
+        height:25px;
+        width: 25px;
+    }
+
+    .nav_menu{
+        top:55px;
+    }
+
+    .First_view{
+        background-image: none;
+        padding-top: 0;
+    }
+
+    .First_view_image_sp{
+        display: block;
+        width: 100%;
+    }
+
+    .First_view_container{
+        margin-top: -45vw;
+        max-width: none;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .First_view_content{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .First_view_title{
+        font-size: 25px;
+    }
+
+    .First_view_image{
+        justify-content: space-between;
+    }
+
+    .First_view_image>img:not(:nth-child(2)){
+        width: 28%;
+    }
+
+    .First_view_button{
+        font-size: 16px;
+    }
+
+    .About{
+        padding: 30px 0;
+    }
+
+    .About_container{
+        max-width: none;
+        padding: 0 20px;
+    }
+
+    .About_container > video{
+        width: 100%;
+    }
+
+    .About_contents{
+        width: 100%;
+    }
+}
